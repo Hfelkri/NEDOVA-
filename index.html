@@ -1,667 +1,213 @@
-
-
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11152e">
-<title>NEDOVA | شبکه ارتباطی بی‌نهایت</title>
-<style>
-*{box-sizing:border-box}
-body{
- margin:0;background:#0c1024;color:#fff;
- font-family:Tahoma,Arial,sans-serif;
- min-height:100vh
-}
-header{
- padding:22px 18px;
- background:linear-gradient(120deg,#151d46,#30206b);
- border-bottom:1px solid #424a83;
- display:flex;align-items:center;justify-content:space-between
-}
-.logo{font-size:27px;font-weight:bold;letter-spacing:2px}
-.logo span{color:#a78bfa}
-.infinity{font-size:32px;color:#7c9cff}
-main{max-width:650px;margin:auto;padding:18px}
-.hero{
- text-align:center;padding:35px 15px;
- background:linear-gradient(145deg,#202c65,#44277c);
- border-radius:22px;margin-bottom:22px
-}
-.hero h1{font-size:27px;margin:5px}
-.hero p{color:#d5d8f5;line-height:2}
-.panel{
- background:#171d39;border:1px solid #343d6d;
- border-radius:18px;padding:18px;margin-bottom:18px
-}
-input,textarea{
- width:100%;padding:14px;margin:8px 0;
- background:#0e1530;color:white;
- border:1px solid #46517f;border-radius:12px;
- font:inherit;outline:none
-}
-textarea{min-height:90px;resize:vertical}
-button{
- border:0;border-radius:12px;padding:13px 18px;
- background:linear-gradient(110deg,#526ff4,#933df0);
- color:white;font:inherit;font-weight:bold;
- cursor:pointer
-}
-button:active{opacity:.8}
-.actions{display:flex;gap:9px;flex-wrap:wrap}
-.actions button{flex:1}
-.post{
- background:#202746;padding:16px;
- border-radius:15px;margin:12px 0;
- border:1px solid #39436d
-}
-.post p{line-height:2;white-space:pre-wrap}
-.muted{color:#aeb7df;font-size:13px}
-nav{
- position:sticky;bottom:0;
- display:flex;justify-content:space-around;
- background:#141a34;padding:13px 5px;
- border-top:1px solid #39436d
-}
-nav button{background:transparent;padding:9px;font-size:13px}
-footer{text-align:center;padding:24px;color:#8993c5;font-size:12px}
-.hidden{display:none}
-</style>
-</head>
-<body>
-
-<header>
- <div>
-  <div class="logo">NED<span>OVA</span></div>
-  <div class="muted">ارتباطی فراتر از مرزها</div>
- </div>
- <div class="infinity">∞</div>
-</header>
-
-<main>
- <section class="hero">
-  <div style="font-size:48px">N∞</div>
-  <h1>به دنیای ندوا خوش آمدی</h1>
-  <p>یک جهان تازه برای ارتباط، اشتراک‌گذاری و ساختن آینده‌ای بدون مرز.</p>
- </section>
-
- <section class="panel" id="account">
-  <h3>ورود به ندوا</h3>
-  <p class="muted">برای شروع، نام نمایشی خود را وارد کن.</p>
-  <input id="username" placeholder="نام شما">
-  <button onclick="login()">ورود آزمایشی</button>
-  <p class="muted" id="welcome"></p>
- </section>
-
- <section class="panel">
-  <h3>چه چیزی در ذهن داری؟</h3>
-  <textarea id="postText" placeholder="اینجا بنویس و با دیگران به اشتراک بگذار..."></textarea>
-  <button onclick="publish()">انتشار پست</button>
- </section>
-
- <section>
-  <h3>آخرین نوشته‌ها</h3>
-  <div id="feed"></div>
- </section>
-
- <section class="panel">
-  <h3>درباره ندوا</h3>
-  <p class="muted" style="line-height:2.2">
-   NEDOVA بستری برای ارتباط آزاد، اشتراک دانش و ایجاد یک جامعه جهانی است.
-   این فقط آغاز یک مسیر بزرگ است.
-  </p>
- </section>
-</main>
-
-<nav>
- <button onclick="window.scrollTo({top:0,behavior:'smooth'})">خانه</button>
- <button onclick="document.getElementById('postText').focus()">انتشار</button>
- <button onclick="document.getElementById('account').scrollIntoView({behavior:'smooth'})">پروفایل</button>
-</nav>
-
-<footer>NEDOVA © 2026 | ارتباط بی‌نهایت</footer>
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="HTML
+HTML
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11152e">
-<title>NEDOVA | شبکه ارتباطی بی‌نهایت</title>
+<meta name="theme-color" content="#10152f">
+<title>NEDOVA | ندوا</title>
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
- margin:0;background:#0c1024;color:#fff;
- font-family:Tahoma,Arial,sans-serif;
- min-height:100vh
+font-family:Tahoma,Arial,sans-serif;
+background:#0b1024;
+color:#fff;
+min-height:100vh;
 }
 header{
- padding:22px 18px;
- background:linear-gradient(120deg,#151d46,#30206b);
- border-bottom:1px solid #424a83;
- display:flex;align-items:center;justify-content:space-between
+background:#151d3b;
+padding:20px;
+text-align:center;
+border-bottom:1px solid #303d70;
 }
-.logo{font-size:27px;font-weight:bold;letter-spacing:2px}
-.logo span{color:#a78bfa}
-.infinity{font-size:32px;color:#7c9cff}
-main{max-width:650px;margin:auto;padding:18px}
-.hero{
- text-align:center;padding:35px 15px;
- background:linear-gradient(145deg,#202c65,#44277c);
- border-radius:22px;margin-bottom:22px
+.logo{
+font-size:34px;
+font-weight:bold;
+letter-spacing:3px;
+background:linear-gradient(90deg,#56c8ff,#a78bfa);
+-webkit-background-clip:text;
+color:transparent;
 }
-.hero h1{font-size:27px;margin:5px}
-.hero p{color:#d5d8f5;line-height:2}
-.panel{
- background:#171d39;border:1px solid #343d6d;
- border-radius:18px;padding:18px;margin-bottom:18px
+header p{color:#b8c5e8;margin-top:8px}
+.container{
+width:90%;
+max-width:520px;
+margin:45px auto;
 }
-input,textarea{
- width:100%;padding:14px;margin:8px 0;
- background:#0e1530;color:white;
- border:1px solid #46517f;border-radius:12px;
- font:inherit;outline:none
+.card{
+background:#151d3b;
+padding:28px;
+border-radius:20px;
+border:1px solid #303d70;
+box-shadow:0 12px 35px #0005;
 }
-textarea{min-height:90px;resize:vertical}
+h2{text-align:center;margin-bottom:12px}
+.description{
+text-align:center;
+color:#aebbdc;
+line-height:2;
+margin-bottom:24px;
+}
+input{
+width:100%;
+padding:15px;
+margin:9px 0;
+border:1px solid #394775;
+border-radius:10px;
+background:#0b1024;
+color:white;
+font-size:15px;
+outline:none;
+}
+input:focus{border-color:#65bfff}
 button{
- border:0;border-radius:12px;padding:13px 18px;
- background:linear-gradient(110deg,#526ff4,#933df0);
- color:white;font:inherit;font-weight:bold;
- cursor:pointer
+width:100%;
+padding:15px;
+margin-top:14px;
+border:0;
+border-radius:10px;
+background:linear-gradient(90deg,#287eea,#8056d9);
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
-button:active{opacity:.8}
-.actions{display:flex;gap:9px;flex-wrap:wrap}
-.actions button{flex:1}
-.post{
- background:#202746;padding:16px;
- border-radius:15px;margin:12px 0;
- border:1px solid #39436d
+button:hover{opacity:.9}
+.switch{
+text-align:center;
+margin-top:22px;
+color:#aebbdc;
+font-size:14px;
 }
-.post p{line-height:2;white-space:pre-wrap}
-.muted{color:#aeb7df;font-size:13px}
-nav{
- position:sticky;bottom:0;
- display:flex;justify-content:space-around;
- background:#141a34;padding:13px 5px;
- border-top:1px solid #39436d
+.switch span{
+color:#67c5ff;
+cursor:pointer;
+font-weight:bold;
 }
-nav button{background:transparent;padding:9px;font-size:13px}
-footer{text-align:center;padding:24px;color:#8993c5;font-size:12px}
+#message{
+text-align:center;
+margin-top:18px;
+color:#7ee6bd;
+line-height:2;
+}
+footer{
+text-align:center;
+color:#7381a8;
+padding:25px;
+font-size:12px;
+}
 .hidden{display:none}
 </style>
 </head>
 <body>
 
 <header>
- <div>
-  <div class="logo">NED<span>OVA</span></div>
-  <div class="muted">ارتباطی فراتر از مرزها</div>
- </div>
- <div class="infinity">∞</div>
+<div class="logo">NEDOVA</div>
+<p>دنیایی تازه برای ارتباطات جهانی</p>
 </header>
 
-<main>
- <section class="hero">
-  <div style="font-size:48px">N∞</div>
-  <h1>به دنیای ندوا خوش آمدی</h1>
-  <p>یک جهان تازه برای ارتباط، اشتراک‌گذاری و ساختن آینده‌ای بدون مرز.</p>
- </section>
+<main class="container">
 
- <section class="panel" id="account">
-  <h3>ورود به ندوا</h3>
-  <p class="muted">برای شروع، نام نمایشی خود را وارد کن.</p>
-  <input id="username" placeholder="نام شما">
-  <button onclick="login()">ورود آزمایشی</button>
-  <p class="muted" id="welcome"></p>
- </section>
+<section class="card" id="login">
+<h2>به ندوا خوش آمدید</h2>
+<p class="description">
+ارتباطی نو، جهانی بزرگ‌تر و تجربه‌ای متفاوت
+</p>
 
- <section class="panel">
-  <h3>چه چیزی در ذهن داری؟</h3>
-  <textarea id="postText" placeholder="اینجا بنویس و با دیگران به اشتراک بگذار..."></textarea>
-  <button onclick="publish()">انتشار پست</button>
- </section>
+<form id="loginForm">
+<input type="email" id="loginEmail"
+placeholder="ایمیل شما" required>
+<input type="password" id="loginPassword"
+placeholder="رمز عبور" required>
+<button type="submit">ورود به ندوا</button>
+</form>
 
- <section>
-  <h3>آخرین نوشته‌ها</h3>
-  <div id="feed"></div>
- </section>
+<div class="switch">
+حساب کاربری ندارید؟
+<span onclick="showRegister()">ثبت‌نام کنید</span>
+</div>
+</section>
 
- <section class="panel">
-  <h3>درباره ندوا</h3>
-  <p class="muted" style="line-height:2.2">
-   NEDOVA بستری برای ارتباط آزاد، اشتراک دانش و ایجاد یک جامعه جهانی است.
-   این فقط آغاز یک مسیر بزرگ است.
-  </p>
- </section>
+<section class="card hidden" id="register">
+<h2>ساخت حساب کاربری</h2>
+<p class="description">
+به خانواده جهانی ندوا بپیوندید
+</p>
+
+<form id="registerForm">
+<input type="text" id="name"
+placeholder="نام شما" required>
+<input type="email" id="email"
+placeholder="ایمیل شما" required>
+<input type="password" id="password"
+placeholder="رمز عبور" minlength="6" required>
+<button type="submit">ایجاد حساب</button>
+</form>
+
+<div class="switch">
+حساب دارید؟
+<span onclick="showLogin()">وارد شوید</span>
+</div>
+</section>
+
+<section class="card hidden" id="welcome">
+<h2>به ندوا خوش آمدی!</h2>
+<p class="description" id="welcomeText"></p>
+<button onclick="logout()">خروج از حساب</button>
+</section>
+
+<p id="message"></p>
+
 </main>
 
-<nav>
- <button onclick="window.scrollTo({top:0,behavior:'smooth'})">خانه</button>
- <button onclick="document.getElementById('postText').focus()">انتشار</button>
- <button onclick="document.getElementById('account').scrollIntoView({behavior:'smooth'})">پروفایل</button>
-</nav>
-
-<footer>NEDOVA © 2026 | ارتباط بی‌نهایت</footer>
+<footer>
+© 2026 NEDOVA - All Rights Reserved
+</footer>
 
 <script>
-let currentUser=localStorage.getItem('nedova_user')||'';
+const login=document.getElementById("login");
+const register=document.getElementById("register");
+const welcome=document.getElementById("welcome");
+const message=document.getElementById("message");
 
-function login(){
- const name=document.getElementById('username').value.trim();
- if(!name){alert('لطفاً نام خود را وارد کن');return}
- currentUser=name;
- localStorage.setItem('nedova_user',name);
- updateWelcome();
+function showRegister(){
+login.classList.add("hidden");
+register.classList.remove("hidden");
+message.textContent="";
 }
 
-function updateWelcome(){
- if(currentUser){
-  document.getElementById('welcome').textContent=
-  'خوش آمدی '+currentUser+' عزیز!';
-  document.getElementById('username').value=currentUser;
- }
+function showLogin(){
+register.classList.add("hidden");
+login.classList.remove("hidden");
+message.textContent="";
 }
 
-function publish(){
- if(!currentUser){
-  alert('ابتدا نام خود را وارد کن و ورود آزمایشی را بزن');
-  return;
- }
- const input=document.getElementById('postText');
- const content=input.value.trim();
- if(!content)return;
- let posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- posts.unshift({
-  user:currentUser,
-  text:content,
-  date:new Date().toLocaleString('fa-IR')
- });
- localStorage.setItem('nedova_posts',JSON.stringify(posts));HTML
-
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11152e">
-<title>NEDOVA | شبکه ارتباطی بی‌نهایت</title>
-<style>
-*{box-sizing:border-box}
-body{
- margin:0;background:#0c1024;color:#fff;
- font-family:Tahoma,Arial,sans-serif;
- min-height:100vh
-}
-header{
- padding:22px 18px;
- background:linear-gradient(120deg,#151d46,#30206b);
- border-bottom:1px solid #424a83;
- display:flex;align-items:center;justify-content:space-between
-}
-.logo{font-size:27px;font-weight:bold;letter-spacing:2px}
-.logo span{color:#a78bfa}
-.infinity{font-size:32px;color:#7c9cff}
-main{max-width:650px;margin:auto;padding:18px}
-.hero{
- text-align:center;padding:35px 15px;
- background:linear-gradient(145deg,#202c65,#44277c);
- border-radius:22px;margin-bottom:22px
-}
-.hero h1{font-size:27px;margin:5px}
-.hero p{color:#d5d8f5;line-height:2}
-.panel{
- background:#171d39;border:1px solid #343d6d;
- border-radius:18px;padding:18px;margin-bottom:18px
-}
-input,textarea{
- width:100%;padding:14px;margin:8px 0;
- background:#0e1530;color:white;
- border:1px solid #46517f;border-radius:12px;
- font:inherit;outline:none
-}
-textarea{min-height:90px;resize:vertical}
-button{
- border:0;border-radius:12px;padding:13px 18px;
- background:linear-gradient(110deg,#526ff4,#933df0);
- color:white;font:inherit;font-weight:bold;
- cursor:pointer
-}
-button:active{opacity:.8}
-.actions{display:flex;gap:9px;flex-wrap:wrap}
-.actions button{flex:1}
-.post{
- background:#202746;padding:16px;
- border-radius:15px;margin:12px 0;
- border:1px solid #39436d
-}
-.post p{line-height:2;white-space:pre-wrap}
-.muted{color:#aeb7df;font-size:13px}
-nav{
- position:sticky;bottom:0;
- display:flex;justify-content:space-around;
- background:#141a34;padding:13px 5px;
- border-top:1px solid #39436d
-}
-nav button{background:transparent;padding:9px;font-size:13px}
-footer{text-align:center;padding:24px;color:#8993c5;font-size:12px}
-.hidden{display:none}
-</style>
-</head>
-<body>
-
-<header>
- <div>
-  <div class="logo">NED<span>OVA</span></div>
-  <div class="muted">ارتباطی فراتر از مرزها</div>
- </div>
- <div class="infinity">∞</div>
-</header>
-
-<main>
- <section class="hero">
-  <div style="font-size:48px">N∞</div>
-  <h1>به دنیای ندوا خوش آمدی</h1>
-  <p>یک جهان تازه برای ارتباط، اشتراک‌گذاری و ساختن آینده‌ای بدون مرز.</p>
- </section>
-
- <section class="panel" id="account">
-  <h3>ورود به ندوا</h3>
-  <p class="muted">برای شروع، نام نمایشی خود را وارد کن.</p>
-  <input id="username" placeholder="نام شما">
-  <button onclick="login()">ورود آزمایشی</button>
-  <p class="muted" id="welcome"></p>
- </section>
-
- <section class="panel">
-  <h3>چه چیزی در ذهن داری؟</h3>
-  <textarea id="postText" placeholder="اینجا بنویس و با دیگران به اشتراک بگذار..."></textarea>
-  <button onclick="publish()">انتشار پست</button>
- </section>
-
- <section>
-  <h3>آخرین نوشته‌ها</h3>
-  <div id="feed"></div>
- </section>
-
- <section class="panel">
-  <h3>درباره ندوا</h3>
-  <p class="muted" style="line-height:2.2">
-   NEDOVA بستری برای ارتباط آزاد، اشتراک دانش و ایجاد یک جامعه جهانی است.
-   این فقط آغاز یک مسیر بزرگ است.
-  </p>
- </section>
-</main>
-
-<nav>
- <button onclick="window.scrollTo({top:0,behavior:'smooth'})">خانه</button>
- <button onclick="document.getElementById('postText').focus()">انتشار</button>
- <button onclick="document.getElementById('account').scrollIntoView({behavior:'smooth'})">پروفایل</button>
-</nav>
-
-<footer>NEDOVA © 2026 | ارتباط بی‌نهایت</footer>
-
-<script>
-let currentUser=localStorage.getItem('nedova_user')||'';
-
-function login(){
- const name=document.getElementById('username').value.trim();
- if(!name){alert('لطفاً نام خود را وارد کن');return}
- currentUser=name;
- localStorage.setItem('nedova_user',name);
- updateWelcome();
+function logout(){
+welcome.classList.add("hidden");
+login.classList.remove("hidden");
+message.textContent="با آرزوی دیدار دوباره!";
 }
 
-function updateWelcome(){
- if(currentUser){
-  document.getElementById('welcome').textContent=
-  'خوش آمدی '+currentUser+' عزیز!';
-  document.getElementById('username').value=currentUser;
- }
-}
+document.getElementById("registerForm")
+.addEventListener("submit",function(e){
+e.preventDefault();
 
-function publish(){
- if(!currentUser){
-  alert('ابتدا نام خود را وارد کن و ورود آزمایشی را بزن');
-  return;
- }
- const input=document.getElementById('postText');
- const content=input.value.trim();
- if(!content)return;
- let posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- posts.unshift({
-  user:currentUser,
-  text:content,
-  date:new Date().toLocaleString('fa-IR')
- });
- localStorage.setItem('nedova_posts',JSON.stringify(posts));
- input.value='';
- showPosts();
-}
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
 
-function showPosts(){
- const posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- const feed=document.getElementById('feed');
- feed.innerHTML='';
- if(posts.length===0){
-  feed.innerHTML='<div class="panel muted">هنوز نوشته‌ای منتشر نشده است. اولین نفر باش!</div>';
-  return;
- }
- posts.forEach(post=>{
-  const item=document.createElement('article');
-  item.className='post';
-  const title=document.createElement('strong');
-  title.textContent=post.user;
-  const date=document.createElement('div');
-  date.className='muted';
-  date.textContent=post.date;
-  const text=document.createElement('p');
-  text.textContent=post.text;
-  item.append(title,date,text);
-  feed.appendChild(item);
- });
-}
+message.textContent=
+"سلام "+name+"! فرم شما آماده است. برای ثبت واقعی حساب، به سرور نیاز داریم.";
 
-updateWelcome();
-showPosts();
+});
+
+document.getElementById("loginForm")
+.addEventListener("submit",function(e){
+e.preventDefault();
+message.textContent=
+"ورود نمایشی است؛ برای ورود واقعی باید سیستم احراز هویت متصل شود.";
+});
 </script>
+
 </body>
 </html>
-
- input.value='';
- showPosts();
-}
-
-function showPosts(){
- const posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- const feed=document.getElementById('feed');
- feed.innerHTML='';
- if(posts.length===0){
-  feed.innerHTML='<div class="panel muted">هنوز نوشته‌ای منتشر نشده است. اولین نفر باش!</div>';
-  return;
- }
- posts.forEach(post=>{
-  const item=document.createElement('article');
-  item.className='post';
-  const title=document.createElement('strong');
-  title.textContent=post.user;
-  const date=document.createElement('div');
-  date.className='muted';
-  date.textContent=post.date;
-  const text=document.createElement('p');
-  text.textContent=post.text;
-  item.append(title,date,text);
-  feed.appendChild(item);
- });
-}
-
-updateWelcome();
-showPosts();
-</script>
-</body>
-</html>
-=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11152d">
-  <title>NEDOVA | ندوا</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(145deg,#10152e,#24164b);
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .container { padding: 25px; }
-    .logo {
-      font-size: 65px;
-      font-weight: bold;
-      color: #8e8bff;
-    }
-    h1 { font-size: 34px; letter-spacing: 3px; }
-    p { color: #c4c6df; font-size: 16px; }
-    button {
-      margin-top: 25px;
-      padding: 15px 35px;
-      border: 0;
-      border-radius: 30px;
-      color: white;
-      background: linear-gradient(90deg,#526bff,#a04bdb);
-      font-size: 17px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">N∞</div>
-    <h1>NEDOVA</h1>
-    <p>ارتباطی فراتر از مرزها</p>
-    <p>دنیای ارتباطات، در دستان تو</p>
-    <button onclick="alert('به ندوا خوش آمدی!')">
-      شروع ارتباط
-    </button>
-  </div>
-</body>
-</html>
-<script>
-let currentUser=localStorage.getItem('nedova_user')||'';
-
-function login(){
- const name=document.getElementById('username').value.trim();
- if(!name){alert('لطفاً نام خود را وارد کن');return}
- currentUser=name;
- localStorage.setItem('nedova_user',name);
- updateWelcome();
-}
-
-function updateWelcome(){
- if(currentUser){
-  document.getElementById('welcome').textContent=
-  'خوش آمدی '+currentUser+' عزیز!';
-  document.getElementById('username').value=currentUser;
- }
-}
-
-function publish(){
- if(!currentUser){
-  alert('ابتدا نام خود را وارد کن و ورود آزمایشی را بزن');
-  return;
- }
- const input=document.getElementById('postText');
- const content=input.value.trim();
- if(!content)return;
- let posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- posts.unshift({
-  user:currentUser,
-  text:content,
-  date:new Date().toLocaleString('fa-IR')
- });
- localStorage.setItem('nedova_posts',JSON.stringify(posts));
- input.value='';
- showPosts();
-}
-
-function showPosts(){
- const posts=JSON.parse(localStorage.getItem('nedova_posts')||'[]');
- const feed=document.getElementById('feed');
- feed.innerHTML='';
- if(posts.length===0){
-  feed.innerHTML='<div class="panel muted">هنوز نوشته‌ای منتشر نشده است. اولین نفر باش!</div>';
-  return;
- }
- posts.forEach(post=>{
-  const item=document.createElement('article');
-  item.className='post';
-  const title=document.createElement('strong');
-  title.textContent=post.user;
-  const date=document.createElement('div');
-  date.className='muted';
-  date.textContent=post.date;
-  const text=document.createElement('p');
-  text.textContent=post.text;
-  item.append(title,date,text);
-  feed.appendChild(item);
- });
-}
-
-updateWelcome();
-showPosts();
-</script>
-</body>
-</html>
-=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11152d">
-  <title>NEDOVA | ندوا</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(145deg,#10152e,#24164b);
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .container { padding: 25px; }
-    .logo {
-      font-size: 65px;
-      font-weight: bold;
-      color: #8e8bff;
-    }
-    h1 { font-size: 34px; letter-spacing: 3px; }
-    p { color: #c4c6df; font-size: 16px; }
-    button {
-      margin-top: 25px;
-      padding: 15px 35px;
-      border: 0;
-      border-radius: 30px;
-      color: white;
-      background: linear-gradient(90deg,#526bff,#a04bdb);
-      font-size: 17px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">N∞</div>
-    <h1>NEDOVA</h1>
-    <p>ارتباطی فراتر از مرزها</p>
-    <p>دنیای ارتباطات، در دستان تو</p>
-    <button onclick="alert('به ندوا خوش آمدی!')"> 
-      شروع ارتباط
-    </button>
-  </div>
-</body>
-</html>  
