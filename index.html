@@ -208,6 +208,24 @@ message.textContent=
 "ورود نمایشی است؛ برای ورود واقعی باید سیستم احراز هویت متصل شود.";
 });
 </script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-</body>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKweF0EkozTKMlQ70BOLDM-T-Lco6vQyA",
+    authDomain: "nedova-b3ae3.firebaseapp.com",
+    projectId: "nedova-b3ae3",
+    storageBucket: "nedova-b3ae3.firebasestorage.app",
+    messagingSenderId: "549277405776",
+    appId: "1:549277405776:web:8658c99376867fe46b7755"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+ </body>
 </html>
